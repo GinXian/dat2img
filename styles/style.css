@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    color: #fff;
+    background-color: #0072b0;
+    padding: 1em 1.5em;
+    border-radius: .5em;
+    margin-bottom: 3em;
+    box-shadow: 0 0 10px #0072b0;
+    font-family: monospace;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.functional {
+    padding: 1em 1em;
+    display: flex;
+    flex-flow: row wrap;
+    box-shadow: 0 0 20px #aaa;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.directory,
+.preview {
+    flex: 0 0 49%;
+    text-align: center;
+    border: .15rem solid #aaa;
+    border-radius: .7em;
+    padding: 1em 1em;
+}
+
+.preview {
+    margin-left: auto;
+}
