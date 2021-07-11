@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #eee;
+    background-color: #ccc;
+    margin-top: 0;
 }
 
 main {
@@ -13,15 +16,36 @@ main {
 
 header {
     color: #fff;
-    background-color: #0072b0;
+    background-color: #1A1E23;
     padding: 1em 1.5em;
-    border-radius: .5em;
+    border-radius: 0 0 1.5em 1.5em;
     margin-bottom: 3em;
     box-shadow: 0 0 10px #0072b0;
-    font-family: monospace;
+    font-family: Raleway, sans-serif;
     text-align: center;
     text-transform: uppercase;
 }
+
+header > h1 {
+    --fill-color: #198ce6;
+    /* left/0% means starting from left but scaled to 0% */
+    background: linear-gradient(var(--fill-color) 0 100%) left/0% no-repeat;
+    /* text-stroke is for hallow font effect  */
+    -webkit-text-stroke: 2px var(--fill-color);
+    color: transparent;
+    /* background-clip should be preceded by background-image or background-color */
+    background-clip: text;
+    /* background-clip and -webkit-background-clip are usually in couple for the sake of portability */
+    -webkit-background-clip: text;
+    /* transition is default to 'all' if transition-property is not set */
+    transition: background-size 0.5s linear;
+    font-size: 48px;
+}
+
+header > h1:hover {
+    background-size: 100%;
+}
+
 
 .functional {
     padding: 1em 1em;
