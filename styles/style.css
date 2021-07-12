@@ -90,9 +90,16 @@ td,
 th {
     margin: 0;
     width: 50%;
+    max-width: 10em;
     border: 1px solid rgb(190, 190, 190);
     padding: 2em;
     text-align: left;
+    overflow-x: auto;
+}
+
+/* Hide scrollbar while enabling scrolling */
+td::-webkit-scrollbar {
+    display: none;
 }
 
 tbody > tr:nth-child(odd) {
