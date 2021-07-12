@@ -73,7 +73,7 @@ header > h1:hover {
 
 .file_explorer {
     height:40em;
-    overflow-y: scroll;
+    overflow-y: auto;
     /* Don't use overflow-x because it will never overflow horizontally */
 }
 
@@ -94,11 +94,17 @@ th {
     border: 1px solid rgb(190, 190, 190);
     padding: 2em;
     text-align: left;
+    /* If the position property is absolute, the containing block is formed by the edge of the padding box of the nearest ancestor element 
+    that has a position value other than static */
+    position: relative;
+}
+
+.file {
     overflow-x: auto;
 }
 
 /* Hide scrollbar while enabling scrolling */
-td::-webkit-scrollbar {
+.file::-webkit-scrollbar {
     display: none;
 }
 
@@ -121,3 +127,23 @@ tbody > tr > td:nth-child(odd):hover {
     cursor: pointer;
 }
 
+.copy {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #eee url(../images/clippy.svg) 50% 50% no-repeat;
+    background-size: 15px;
+    padding: 6px 12px;
+    border: 1px solid #d5d5d5;
+    border-top: 0;
+    border-right: 0;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+td:hover .copy{
+    display: unset;
+}
