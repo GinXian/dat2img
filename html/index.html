@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            body {
+                display: none;
+            }
+        </style>
+        <script src="../javascript/clipboard.js" defer></script>
+        <link rel="stylesheet" href="../styles/style.css">
+        <title>Wechat data to image</title>
+    </head>
+
+    <body>
+        <main>
+            <header class="headline">
+                <h1>Data to image decoding tool</h1>
+            </header>
+
+            <div class="functional">
+                <div class="directory">
+                    <h4>Please upload a file or directory</h4>
+                    <!-- TODO: add copy button shortcut to copy file name -->
+                    <div class="file_explorer">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th id="filename">filename</th>
+                                    <th id="storage">storage</th>
+                                </tr>
+                            </thead>
+                                
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="file">
+                                            abc.databc.databc.databc.databc.databc.databc.databc.databc.databc.dat
+                                        </div>
+                                        <button type="button" class="copy"></button>
+                                    </td>
+                                    <td>6,233MB</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="file">
+                                            abc.dat
+                                        </div>
+                                        <button type="button" class="copy"></button>
+                                    </td>
+                                    <td>6,233MB</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="preview">
+                    <h4>Preview</h4>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: unset;
+    background-color: #ccc;
+    margin-top: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    color: #fff;
+    background-color: #1A1E23;
+    padding: 1em 1.5em;
+    border-radius: 0 0 1.5em 1.5em;
+    margin-bottom: 3em;
+    box-shadow: 0 0 10px #0072b0;
+    font-family: Raleway, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header > h1 {
+    --fill-color: #198ce6;
+    /* left/0% means starting from left but scaled to 0% */
+    background: linear-gradient(var(--fill-color) 0 100%) left/0% no-repeat;
+    /* text-stroke is for hallow font effect  */
+    -webkit-text-stroke: 2px var(--fill-color);
+    color: transparent;
+    /* background-clip should be preceded by background-image or background-color */
+    background-clip: text;
+    /* background-clip and -webkit-background-clip are usually in couple for the sake of portability */
+    -webkit-background-clip: text;
+    /* transition is default to 'all' if transition-property is not set */
+    transition: background-size 0.5s linear;
+    font-size: 48px;
+}
+
+header > h1:hover {
+    background-size: 100%;
+}
+
+
+.functional {
+    padding: 1em 1em;
+    display: flex;
+    flex-flow: row wrap;
+    box-shadow: 0 0 20px #aaa;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.directory,
+.preview {
+    flex: 0 0 49%;
+    height: auto;
+    text-align: center;
+    border: .15rem solid #aaa;
+    border-radius: .7em;
+    padding: 1em 1em;
+}
+
+.preview {
+    margin-left: auto;
+}
+
+.file_explorer {
+    height:40em;
+    overflow-y: auto;
+    /* Don't use overflow-x because it will never overflow horizontally */
+}
+
+table {
+    border-collapse: collapse;
+    font-family: Raleway, sans-serif;
+    font-size: .3em;
+    margin: 0 auto;
+    font-weight: lighter;
+    width: 100%;
+}
+
+td,
+th {
+    margin: 0;
+    width: 50%;
+    max-width: 10em;
+    border: 1px solid rgb(190, 190, 190);
+    padding: 2em;
+    text-align: left;
+    /* If the position property is absolute, the containing block is formed by the edge of the padding box of the nearest ancestor element 
+    that has a position value other than static */
+    position: relative;
+}
+
+.file {
+    overflow-x: auto;
+}
+
+/* Hide scrollbar while enabling scrolling */
+.file::-webkit-scrollbar {
+    display: none;
+}
+
+tbody > tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+
+/* Only th element can be used with position: sticky */
+/* tr, thead cannot be used in sticky positioning. */
+th {
+    background-color: #696969;
+    color: #fff;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+/* Set the cursor to pointer only if it hovers the filename column */
+/* The filename always lies in odd column */
+tbody > tr > td:nth-child(odd):hover {
+    cursor: pointer;
+}
+
+.copy {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #eee url(../images/clippy.svg) 50% 50% no-repeat;
+    background-size: 15px;
+    padding: 6px 12px;
+    border: 1px solid #d5d5d5;
+    border-top: 0;
+    border-right: 0;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+td:hover .copy{
+    display: unset;
+}
